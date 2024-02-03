@@ -10,10 +10,12 @@ app.use(express.static('public'))
 //import places router
 app.use('/places', require('./controllers/places'))
 
+//homepage
 app.get('/', (req, res) => {
     res.send('Hello world!')
 })
 
+//404 page
 app.get('*', (req, res) => {
     res.status(404).send(`
         <style>
@@ -26,6 +28,7 @@ app.get('*', (req, res) => {
     `)
 })
 
+//listens for connections
 app.listen(process.env.PORT, () => {
     console.log(`Wittle server running on port ${process.env.PORT}`)
 })
