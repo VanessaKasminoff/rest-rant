@@ -5,7 +5,10 @@ const app = express()
 //gets the environment variables
 require('dotenv').config()
 
+//static file server
 app.use(express.static('public'))
+//import places router
+app.use('/places', require('./controllers/places'))
 
 app.get('/', (req, res) => {
     res.send('Hello world!')
