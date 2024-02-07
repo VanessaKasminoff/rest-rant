@@ -2,6 +2,7 @@
 const express = require('express')
 const app = express()
 
+//imports render function
 const render = require('./render')
 
 //gets the environment variables
@@ -10,13 +11,15 @@ require('dotenv').config()
 //MIDDLEWARE
 //static file server
 app.use(express.static('public'))
-//import places router
-app.use('/places', require('./controllers/places'))
 
 //homepage
 app.get('/', (req, res) => {
     res.send(render('home'))
 })
+
+//places route
+const placesController = require('./controllers/places')
+app.use('/places', placesController)
 
 //404 page
 app.get('*', (req, res) => {
