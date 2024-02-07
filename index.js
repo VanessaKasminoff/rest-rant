@@ -20,18 +20,10 @@ app.get('/', (req, res) => {
 
 //404 page
 app.get('*', (req, res) => {
-    res.status(404).send(`
-        <style>
-            body {
-                text-align: center;
-            }
-        </style>
-        <h1>404 PAGE NOT FOUND</h1>
-        <img src='/images/crying cat.jpg'>
-    `)
+    res.status(404).send(render('error404'))
 })
 
 //listens for connections
 app.listen(process.env.PORT, () => {
-    console.log(`Wittle server running on port ${process.env.PORT}`)
+    console.log(`Server running on port ${process.env.PORT}`)
 })
