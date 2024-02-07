@@ -5,3 +5,7 @@ body {
 img {
     width: 50%;
 }
+
+.p-404 {
+    font-size: 2em;
+}
