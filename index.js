@@ -2,6 +2,8 @@
 const express = require('express')
 const app = express()
 
+const render = require('./render')
+
 //gets the environment variables
 require('dotenv').config()
 
@@ -13,7 +15,7 @@ app.use('/places', require('./controllers/places'))
 
 //homepage
 app.get('/', (req, res) => {
-    res.send('Hello world!')
+    res.send(render('home'))
 })
 
 //404 page
