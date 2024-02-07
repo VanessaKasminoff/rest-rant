@@ -5,6 +5,7 @@ const app = express()
 //gets the environment variables
 require('dotenv').config()
 
+//MIDDLEWARE
 //static file server
 app.use(express.static('public'))
 //import places router
