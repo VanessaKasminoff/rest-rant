@@ -1,16 +1,16 @@
 module.exports = [
     {
         name: 'Otterly Delightful Cafe',
-        city: 'Hinton',
-        state: 'West Virginia',
+        city: 'Kyoto',
+        country: 'Japan',
         cuisines: 'Coffee, Bakery',
         pic: '/images/Otterly-Delightful-Cafe.jpg'
     },
     {
         name: 'Seoul Grill & Chill',
-        city: 'Los Angeles',
-        state: 'California',
-        cuisines: 'Korean',
+        city: 'Seoul',
+        country: 'South Korea',
+        cuisines: 'Korean Barbecue',
         pic: '/images/Seoul-Grill-&-Chill.jpg'
     }
 ]
