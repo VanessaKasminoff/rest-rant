@@ -12,5 +12,10 @@ router.get('/', (req, res) => {
     res.send(render('places/index', {places: Place}))
 })
 
+//new route
+router.get('/new', (req, res) => {
+    res.send(render('places/new'))
+})
+
 //exports router for modular use
 module.exports = router
