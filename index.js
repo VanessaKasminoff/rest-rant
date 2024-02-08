@@ -11,6 +11,7 @@ require('dotenv').config()
 //MIDDLEWARE
 //static file server
 app.use(express.static('public'))
+app.use(express.urlencoded({extended: true}))
 
 //homepage
 app.get('/', (req, res) => {

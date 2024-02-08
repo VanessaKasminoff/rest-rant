@@ -17,5 +17,11 @@ router.get('/new', (req, res) => {
     res.send(render('places/new'))
 })
 
+//create route
+router.post('/', (req, res) => {
+    Place.push(req.body)
+    res.redirect('/places')
+})
+
 //exports router for modular use
 module.exports = router
