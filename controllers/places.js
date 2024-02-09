@@ -7,17 +7,29 @@ const render = require('../render')
 //import places data
 const Place = require('../models/places.js')
 
-//places page
+//GET places
 router.get('/', (req, res) => {
     res.send(render('places/index', {places: Place}))
 })
 
-//new route
+//GET new
 router.get('/new', (req, res) => {
     res.send(render('places/new'))
 })
 
-//create route
+//GET show
+router.get('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.status(404).send(render('error404'))
+    } else if (!Place[id]) {
+        res.status(404).send(render('error404'))
+    } else {
+        res.send(render('places/show', {places: Place[id]}))
+    }
+})
+
+//GET create
 router.post('/', (req, res) => {
     if (!req.body.pic) {
         req.body.pic = 'https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'

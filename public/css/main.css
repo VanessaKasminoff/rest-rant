@@ -6,6 +6,8 @@ body {
 nav {
     background-color: #98A731;
     padding: 10px;
+    position: sticky;
+    top: 0;
 }
 
 nav ul {
@@ -43,6 +45,15 @@ img {
     width: 100%;
 }
 
+p {
+    font-size: 1.2em;
+}
+
+.not-found-img {
+    height: 70%;
+    width: 60%;
+}
+
 .btn {
     background-color: #85413e;
     color: white;
@@ -51,6 +62,19 @@ img {
 .btn:hover {
     background-color: #652F2D;
     color: white;
+}
+
+.badge-pill {
+    background-color: #98A731;
+    margin: 1.5px;
+}
+
+.index-links {
+    color: #98A731;
+}
+
+.index-links:hover {
+    color: #c6da44;
 }
 
 .p-404 {
