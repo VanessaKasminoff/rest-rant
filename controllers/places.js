@@ -25,7 +25,7 @@ router.get('/:id', (req, res) => {
     } else if (!Place[id]) {
         res.status(404).send(render('error404'))
     } else {
-        res.send(render('places/show', {places: Place[id]}))
+        res.send(render('places/show', {places: Place[id], id: id}))
     }
 })
 
@@ -42,6 +42,19 @@ router.post('/', (req, res) => {
     }
     Place.push(req.body)
     res.redirect('/places')
+})
+
+//DELETE
+router.delete('/:id', (req, res) => {
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+        res.status(404).send(render('error404'))
+    } else if (!Place[id]) {
+        res.status(404).send(render('error404'))
+    } else {
+        Place.splice(id, 1)
+        res.redirect('/places')
+    }
 })
 
 //exports router for modular use

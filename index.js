@@ -2,16 +2,17 @@
 const express = require('express')
 const app = express()
 
-//imports render function
+//imports
 const render = require('./render')
+const methodOverride = require('method-override')
 
 //gets the environment variables
 require('dotenv').config()
 
 //MIDDLEWARE
-//static file server
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
+app.use(methodOverride('_method'))
 
 //homepage
 app.get('/', (req, res) => {
