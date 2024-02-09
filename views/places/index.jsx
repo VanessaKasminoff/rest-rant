@@ -4,6 +4,7 @@ const Default = require('../layouts/default.jsx')
 const index = ({places}) => {
     return (
         <Default>
+            <main>
                 <h1>Places to Rant or Rave About</h1>
                 <div className='row'>
                     {places.map((place) => (
@@ -15,6 +16,7 @@ const index = ({places}) => {
                         </div>
                     ))}
                 </div>
+            </main>
         </Default>
     )
 }

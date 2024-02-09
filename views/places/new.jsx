@@ -27,7 +27,7 @@ const New = () => {
                         <label htmlFor="cuisines">Cuisines</label>
                         <input className='form-control' id="cuisines" name="cuisines" required />
                     </div>
-                    <input className='btn btn-primary' type="submit" value="Add Place" />
+                    <input className='btn' type="submit" value="Add Place" />
                 </form>
             </main>
         </Default>
