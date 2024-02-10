@@ -17,7 +17,7 @@ nav ul {
 
 nav li {
     display: inline;
-    margin-right: 25px;
+    margin-right: 35px;
 }
 
 nav a {
@@ -32,8 +32,9 @@ nav a:hover {
 
 main {
     max-width: 100%;
-    padding: 0 20px 40px;
+    padding: 20px 20px 40px;
     background-color: #FDFEF6;
+    margin-top: 45px;
 }
 
 h1 {
@@ -84,4 +85,30 @@ p {
 
 .p-404 {
     font-size: 2em;
+}
+
+.app-logo {
+    width: 50px;
+    height: 50px;
+}
+
+#main-nav {
+    display: flex;
+    align-items: flex-end;
+}
+
+#logo-name-container {
+    display: flex;
+    align-items: flex-end;
+    margin: 0 50px 0 40px;
+}
+
+#logo-name-container p {
+    font-size: 1.7em;
+    margin-bottom: 0;
+    color: #652F2D;
+}
+
+#logo-name-container p:hover {
+    text-decoration: underline;
 }

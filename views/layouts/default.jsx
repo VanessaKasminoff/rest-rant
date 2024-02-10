@@ -13,9 +13,15 @@ const Default = (html) => {
                 <link rel='stylesheet' href='/css/main.css' />
             </head>
             <body>
-                <nav>
+                <nav id='main-nav'>
+                    <a href='/'>
+                        <div id='logo-name-container'>
+                            <img className='app-logo' src='/images/logo.svg' alt='rest-rant logo'/>
+                            <p>Rest-RANT</p>
+                        </div>
+                    </a>
                     <ul>
-                        <li><a href='/'>Home</a></li>
+                        {/* <li><a href='/'>Rest-RANT</a></li> */}
                         <li><a href='/places'>Places</a></li>
                         <li><a href='/places/new'>Add Place</a></li>
                     </ul>
