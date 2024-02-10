@@ -8,7 +8,7 @@ const New = () => {
                 <h1>Add a New Place</h1>
                 <form action="/places" method="POST">
                     <div className='form-group'>
-                        <label htmlFor="name">Place Name</label>
+                        <label htmlFor="name">Place Name<span style={{color: 'red'}}>*</span></label>
                         <input className='form-control' id="name" name="name" required />
                     </div>
                     <div className='form-group'>
@@ -24,9 +24,10 @@ const New = () => {
                         <input className='form-control' id="country" name="country" />
                     </div>
                     <div className='form-group'>
-                        <label htmlFor="cuisines">Cuisines</label>
+                        <label htmlFor="cuisines">Cuisines<span style={{color: 'red'}}>*</span></label>
                         <input className='form-control' id="cuisines" name="cuisines" required />
                     </div>
+                    <p className='p-form'><i>*Required</i></p>
                     <input className='btn' type="submit" value="Add Place" />
                 </form>
             </main>

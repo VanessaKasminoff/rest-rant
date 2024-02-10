@@ -77,6 +77,11 @@ p {
     color: #c6da44;
 }
 
+.p-form {
+    color: red;
+    font-size: .8em;
+}
+
 .p-404 {
     font-size: 2em;
 }
