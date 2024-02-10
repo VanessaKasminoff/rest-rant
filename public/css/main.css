@@ -50,6 +50,10 @@ p {
     font-size: 1.2em;
 }
 
+.carousel-item {
+    transition-duration: 2s !important;
+}
+
 .not-found-img {
     height: 70%;
     width: 60%;
