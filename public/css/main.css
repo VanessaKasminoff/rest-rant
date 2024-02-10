@@ -1,5 +1,6 @@
 body {
     background-image: url('/images/bg-plants.jpg');
+    /* background-color: #ececd6; */
     background-size: 100% 100%;
 }
 
@@ -48,6 +49,20 @@ img {
 
 p {
     font-size: 1.2em;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #98A731;
+    color: white;
+    text-align: right;
+}
+
+footer p {
+    margin: 0 40px 0 0;
 }
 
 .carousel-item {
@@ -115,4 +130,8 @@ p {
 
 #logo-name-container p:hover {
     text-decoration: underline;
+}
+
+#carouselExampleIndicators {
+    margin: 20px 0 0 0;
 }
