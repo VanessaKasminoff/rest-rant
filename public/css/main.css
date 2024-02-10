@@ -1,6 +1,6 @@
 body {
-    background-image: url('/images/bg-plants.jpg');
-    /* background-color: #ececd6; */
+    /* background-image: url('/images/bg-plants.jpg'); */
+    background-color: #ececd6;
     background-size: 100% 100%;
 }
 
@@ -65,8 +65,12 @@ footer p {
     margin: 0 40px 0 0;
 }
 
+.edit-button {
+    margin: 5px 0;
+}
+
 .carousel-item {
-    transition-duration: 2s !important;
+    transition-duration: 1.5s !important;
 }
 
 .not-found-img {

@@ -1,5 +1,5 @@
 const myCarousel = document.querySelector('#carouselExampleIndicators');
 
-const carousel = new bootstrap.Carousel(myCarousel, {
-    interval: 5000
-})
+// const carousel = new bootstrap.Carousel(myCarousel, {
+//     interval: 5000
+// })
