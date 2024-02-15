@@ -27,6 +27,10 @@ const New = () => {
                         <label htmlFor="cuisines">Cuisines<span style={{color: 'red'}}>*</span></label>
                         <input className='form-control' id="cuisines" name="cuisines" required />
                     </div>
+                    <div className='form-group'>
+                        <label htmlFor='founded'>Founded Year</label>
+                        <input className='form-control' id='founded' name='founded' />
+                    </div>
                     <p className='p-form'><i>*Required</i></p>
                     <input className='btn' type="submit" value="Add Place" />
                 </form>

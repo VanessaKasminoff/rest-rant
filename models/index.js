@@ -7,3 +7,5 @@ mongoose.connect(MONGO_URI).then(() => {
 }).catch(err => {
     console.log('Error connecting to mongo: ', err)
 })
+
+module.exports.Place = require('./places')
