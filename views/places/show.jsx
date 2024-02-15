@@ -1,7 +1,7 @@
 const React = require('react')
 const Default = require('../layouts/default.jsx')
 
-const show = ({places, id}) => {
+const show = ({places}) => {
     const cuisinesBadges = places.cuisines.split(',').map((cuisine) => {
         return (
             <span key={cuisine} className='badge badge-pill'>{cuisine}</span>
@@ -22,8 +22,8 @@ const show = ({places, id}) => {
                 </div>
                 <div className='row align-items-center'>
                     <div className='col'>
-                        <a href={`/places/${id}/edit`} className='btn edit-button'>Edit</a>
-                        <form action={`/places/${id}?_method=DELETE`} method='POST'>
+                        <a href={`/places/${places.id}/edit`} className='btn edit-button'>Edit</a>
+                        <form action={`/places/${places.id}?_method=DELETE`} method='POST'>
                             <button type='submit' className='btn'>Delete</button>
                         </form>
                     </div>
