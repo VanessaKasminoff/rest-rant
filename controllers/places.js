@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
         res.send(render('places/index', {places}))
     }).catch(err => {
         console.log('err', err)
-        res.status(404).send('error404')
+        res.status(404).send(render('error404'))
     })
 })
 
@@ -26,7 +26,7 @@ router.get('/:id', (req, res) => {
         res.send(render('places/show', {places}))
     }).catch(err => {
         console.log('err', err)
-        res.status(404).send('error404')
+        res.status(404).send(render('error404'))
     })
 })
 
@@ -50,8 +50,16 @@ router.post('/', (req, res) => {
     db.Place.create(req.body).then(() => {
         res.redirect('/places')
     }).catch(err => {
-        console.log('err', err)
-        res.status(404).send('error404')
+        if (err && err.name == 'ValidationError') {
+            let message = 'Validation Error: '
+            for (var field in err.errors) {
+                message += `${field} was ${err.errors[field].value}.`
+                message += ` ${err.errors[field].message}`
+            }
+            res.send(render('places/new', { message }))
+        } else {
+            res.status(404).send(render('error404'))
+        }
     })
 })
 
