@@ -1,11 +1,11 @@
-//creates router
+//dependencies
 const router = require('express').Router()
 
 //imports
 const render = require('../render')
 const db = require('../models')
 
-//GET places
+//GET places route
 router.get('/', (req, res) => {
     db.Place.find().then((places) => {
         res.send(render('places/index', {places}))
@@ -15,12 +15,12 @@ router.get('/', (req, res) => {
     })
 })
 
-//GET new
+//GET new route
 router.get('/new', (req, res) => {
     res.send(render('places/new'))
 })
 
-//GET show
+//GET show route
 router.get('/:id', (req, res) => {
     db.Place.findById(req.params.id).then((places) => {
         res.send(render('places/show', {places}))
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
     })
 })
 
-//Update edit
+//PUT update route
 router.put('/:id', (req, res) => {
     if (!req.body.pic) {
         req.body.pic = undefined
@@ -53,7 +53,7 @@ router.put('/:id', (req, res) => {
   })
   
 
-//create
+//POST create route
 router.post('/', (req, res) => {
     if (!req.body.pic) {
         req.body.pic = undefined
@@ -80,7 +80,7 @@ router.post('/', (req, res) => {
     })
 })
 
-//GET edit
+//GET edit route form
 router.get('/:id/edit', (req, res) => {
     db.Place.findById(req.params.id).then((foundPlace) => {
         res.send(render('places/edit', {places: foundPlace}))
@@ -90,7 +90,7 @@ router.get('/:id/edit', (req, res) => {
     })
 })
 
-//DELETE
+//DELETE route
 router.delete('/:id', (req, res) => {
     db.Place.findByIdAndDelete(req.params.id)
     .then(() => {

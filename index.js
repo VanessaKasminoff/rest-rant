@@ -1,13 +1,14 @@
-//sets the required node modules
+//dependencies
 const express = require('express')
 const app = express()
+const methodOverride = require('method-override')
 
 //imports
 const render = require('./render')
-const methodOverride = require('method-override')
 
 //gets the environment variables
 require('dotenv').config()
+const PORT = process.env.PORT
 
 //MIDDLEWARE
 app.use(express.static('public'))
@@ -28,7 +29,7 @@ app.get('*', (req, res) => {
     res.status(404).send(render('error404'))
 })
 
-//listens for connections
-app.listen(process.env.PORT, () => {
-    console.log(`Server running on port ${process.env.PORT}`)
+//listening
+app.listen(PORT, () => {
+    console.log(`Server running on port ${PORT}`)
 })
