@@ -92,7 +92,14 @@ router.get('/:id/edit', (req, res) => {
 
 //DELETE
 router.delete('/:id', (req, res) => {
-    res.send('DELETE /places/:id stub')
+    db.Place.findByIdAndDelete(req.params.id)
+    .then(() => {
+        res.status(303).redirect('/places')
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.status(404).send(render('error404'))
+    })
 })
 
 //exports router for modular use
