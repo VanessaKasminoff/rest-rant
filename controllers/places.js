@@ -32,7 +32,24 @@ router.get('/:id', (req, res) => {
 
 //Update edit
 router.put('/:id', (req, res) => {
-    res.send('PUT /places/:id stub')
+    if (!req.body.pic) {
+        req.body.pic = undefined
+    }
+    if (!req.body.city) {
+        req.body.city = 'Some City'
+    }
+    if (!req.body.country) {
+        req.body.country = 'Some Country'
+    }
+    db.Place.findByIdAndUpdate(req.params.id, req.body, {new: true})
+    .then((updatedPlace) => {
+        console.log(updatedPlace)
+        res.redirect(`/places/${req.params.id}`)
+    })
+    .catch(err => {
+        console.log('err', err)
+        res.status(404).send(render('error404'))
+    })
   })
   
 
@@ -65,7 +82,12 @@ router.post('/', (req, res) => {
 
 //GET edit
 router.get('/:id/edit', (req, res) => {
-    res.send('GET edit form stub')
+    db.Place.findById(req.params.id).then((foundPlace) => {
+        res.send(render('places/edit', {places: foundPlace}))
+    }).catch(err => {
+        console.log('err', err)
+        res.status(404).send(render('error404'))
+    })
 })
 
 //DELETE

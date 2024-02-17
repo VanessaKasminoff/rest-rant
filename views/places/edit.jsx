@@ -1,12 +1,12 @@
 const React = require("react");
 const Default = require("../layouts/default.jsx");
 
-const edit = ({places, id}) => {
+const edit = ({ places }) => {
   return (
     <Default>
       <main>
         <h1>Edit a Place</h1>
-        <form action={`/places/${id}?_method=PUT`} method="POST">
+        <form action={`/places/${places.id}?_method=PUT`} method="POST">
           <div className="form-group">
             <label htmlFor="name">
               Place Name<span style={{ color: "red" }}>*</span>
@@ -61,6 +61,16 @@ const edit = ({places, id}) => {
               name="cuisines"
               required
               defaultValue={places.cuisines}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="founded">Founded Year</label>
+            <input
+              className="form-control"
+              type="number"
+              id="founded"
+              name="founded"
+              defaultValue={places.founded}
             />
           </div>
           <p className="p-form">
