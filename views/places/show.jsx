@@ -13,11 +13,17 @@ const show = ({places}) => {
                 <div className='row align-items-start'>
                     <div className='col'>
                         <img src={places.pic} alt={places.name} />
+                        <p><i>Located in {places.city}, {places.country}</i></p>
                     </div>
                     <div className='col'>
                         <h1>{places.name}</h1>
-                        <p>{places.city}, {places.country}</p>
-                        <p>{cuisinesBadges}</p>
+                        <div className='show-desc-container'>
+                            <p>{cuisinesBadges}</p>
+                            <h2>Rating</h2>
+                            <p>Not Rated</p>
+                            <h2>Description</h2>
+                            <p>{places.showEstablished()}</p>
+                        </div>
                     </div>
                 </div>
                 <div className='row align-items-center'>

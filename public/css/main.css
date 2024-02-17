@@ -65,6 +65,14 @@ footer p {
     margin: 0 40px 0 0;
 }
 
+.show-desc-container {
+    text-align: center;
+}
+
+.show-desc-container h2 {
+    color: #652F2D;
+}
+
 .edit-button {
     margin: 5px 0;
 }
