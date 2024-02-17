@@ -48,7 +48,7 @@ router.put('/:id', (req, res) => {
     })
     .catch(err => {
         console.log('err', err)
-        res.status(404).send(render('error404'))
+        res.status(400).send('400: BAD REQUEST')
     })
   })
   
@@ -75,7 +75,7 @@ router.post('/', (req, res) => {
             }
             res.send(render('places/new', { message }))
         } else {
-            res.status(404).send(render('error404'))
+            res.status(400).send('400: BAD REQUEST')
         }
     })
 })
@@ -98,7 +98,7 @@ router.delete('/:id', (req, res) => {
     })
     .catch(err => {
         console.log('err', err)
-        res.status(404).send(render('error404'))
+        res.status(400).send('400: BAD REQUEST')
     })
 })
 
