@@ -29,7 +29,7 @@ const New = () => {
                     </div>
                     <div className='form-group'>
                         <label htmlFor='founded'>Founded Year</label>
-                        <input className='form-control' id='founded' name='founded' />
+                        <input className='form-control' type='number' id='founded' name='founded' defaultValue={new Date().getFullYear()} />
                     </div>
                     <p className='p-form'><i>*Required</i></p>
                     <input className='btn' type="submit" value="Add Place" />
