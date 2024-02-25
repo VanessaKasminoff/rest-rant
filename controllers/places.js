@@ -22,7 +22,10 @@ router.get('/new', (req, res) => {
 
 //GET show route
 router.get('/:id', (req, res) => {
-    db.Place.findById(req.params.id).then((places) => {
+    db.Place.findById(req.params.id)
+    .populate('comments')
+    .then((places) => {
+        console.log(places.comments)
         res.send(render('places/show', {places}))
     }).catch(err => {
         console.log('err', err)

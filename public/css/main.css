@@ -123,6 +123,11 @@ footer p {
     height: 50px;
 }
 
+.star-img {
+    width: 8%;
+    height: 8%;
+}
+
 #main-nav {
     display: flex;
     align-items: flex-end;
