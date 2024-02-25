@@ -11,3 +11,4 @@ mongoose.connect(MONGO_URI).then(() => {
 })
 
 module.exports.Place = require('./places')
+module.exports.Comment = require('./comments')
