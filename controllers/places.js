@@ -105,5 +105,30 @@ router.delete('/:id', (req, res) => {
     })
 })
 
+//POST comment create
+router.post('/:id/comments', (req, res) => {
+    let commentData = req.body
+    commentData.rant = commentData.rant ? true : false
+    commentData.stars = Number(commentData.stars)
+    console.log(commentData)
+    db.Place.findById(req.params.id)
+        .then((place) => {
+            db.Comment.create(commentData)
+                .then((comment) => {
+                    place.comments.push(comment)
+                    place.save()
+                    res.redirect(`/places/${place.id}`)
+                })
+                .catch((err) => {
+                    console.log(err)
+                    res.status(404).send(render('error404'))
+                })
+        })
+        .catch((err) => {
+            console.log(err)
+            res.status(400).send('400: BAD REQUEST')
+        })
+})
+
 //exports router for modular use
 module.exports = router
