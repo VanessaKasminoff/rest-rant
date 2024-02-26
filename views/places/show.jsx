@@ -11,16 +11,21 @@ const show = ({places}) => {
             
             let starCollection = []
             for (let stars = 1; stars <= c.stars; stars++){
-                starCollection.push(<img className='star-img' src='/images/star.svg' alt='gold star'></img>)
+                starCollection.push(<img className='star-img' src='/images/star.svg' alt='gold star' />)
                 
             }
             
             return (
                 <div className='border' key={places.id}>
-                    <h2 className='rant'>{c.rant ? 'Rant! >:(' : 'Rave! :D'}</h2>
-                    <div className="starContainer">{starCollection}</div>
-                    <h4>{c.content}</h4>
-                    <h3>- {c.author}</h3>
+                    <div className='author-container'>
+                        <img className='circle-user-img' src='/images/circle-user.svg' alt='circle user profile'/>
+                        <h3>{c.author}</h3>
+                    </div>
+                    <div className='rant-stars-div'>
+                        <div className="starContainer">{starCollection}</div>
+                        <p className='rant'>{c.rant ? 'Rant! >:(' : 'Rave! :D'}</p>
+                    </div>
+                    <p>{c.content}</p>
                 </div>
             )
         })
@@ -47,17 +52,17 @@ const show = ({places}) => {
                             <p>Not Rated</p>
                             <h2>Description</h2>
                             <p>{places.showEstablished()}</p>
-                            <h2>Comments</h2>
-                            {comments}
+                            <div id='show-buttons-container'>
+                                <a href={`/places/${places.id}/edit`} className='btn edit-button' id='edit-button'>Edit</a>
+                                <form id='submit-form' action={`/places/${places.id}?_method=DELETE`} method='POST'>
+                                    <button type='submit' className='btn'>Delete</button>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-                    <div className='col'>
-                        <a href={`/places/${places.id}/edit`} className='btn edit-button'>Edit</a>
-                        <form action={`/places/${places.id}?_method=DELETE`} method='POST'>
-                            <button type='submit' className='btn'>Delete</button>
-                        </form>
-                    </div>
+                <h2 className='comments-header'>Comments</h2>
+                {comments}
             </main>
         </Default>
     )

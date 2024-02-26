@@ -123,9 +123,51 @@ footer p {
     height: 50px;
 }
 
+.comments-header {
+    margin: 10px 10px;
+    color: #652F2D;
+}
+
+.author-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.circle-user-img {
+    width: 40px;
+    height: 40px;
+}
+
+.starContainer {
+    width: 16%;
+    height: 50%;
+}
+
+.rant-stars-div {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 30px;
+}
+
 .star-img {
-    width: 8%;
-    height: 8%;
+    width: 38.09px;
+    height: 33.85px;
+}
+
+.rant {
+    margin: 0 0 0 10px;
+    font-weight: bold;
+}
+
+.border {
+    padding: 15px;
+}
+
+.border h3 {
+    font-weight: normal;
+    font-size: 1.2rem;
+    margin: 0 0 0 10px;
 }
 
 #main-nav {
@@ -151,4 +193,17 @@ footer p {
 
 #carouselExampleIndicators {
     margin: 20px 0 0 0;
+}
+
+#show-buttons-container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+#submit-form {
+    margin: 0;
+}
+
+#edit-button {
+    margin: 0 10px 0 0;
 }
