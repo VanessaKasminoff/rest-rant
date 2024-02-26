@@ -63,8 +63,8 @@ const show = ({places}) => {
                 </div>
                 <h2 className='comments-header'>Comments</h2>
                 {comments}
-                <h2 className='comments-header'>Add a Comment</h2>
-                <div id='comment-form-container'>
+                {/* <h2 className='comments-header'>Add a Comment</h2> */}
+                <div id='comment-form-container' className='d-none'>
                     <form action={`/places/${places.id}/comments`} method='POST'>
                         <div className='form-group stars'>
                                 <input type="radio" id="star5" name="stars" value="5" />
@@ -99,7 +99,10 @@ const show = ({places}) => {
                         </div>
                     </form>
                 </div>
+                <button id="button-show-or-hide-comment-form" className='btn'>Add Comment</button>
+
             </main>
+            <script src="/js/showScript.js"></script>
         </Default>
     )
 }
