@@ -171,6 +171,10 @@ footer p {
     margin: 0 0 0 10px;
 }
 
+.delete-comment-btn {
+ 
+}
+
 .stars {
     display: flex;
     flex-direction: row-reverse;

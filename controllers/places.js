@@ -130,5 +130,19 @@ router.post('/:id/comments', (req, res) => {
         })
 })
 
+// router.delete('/:id/comments', (req, res) => {
+//     db.Place.findById(req.params.id)
+//     .then((place) => {
+//         db.Comment.findByIdAndDelete(req.params.id)
+//         .then(() => {
+//             res.redirect(`/places/${place.id}`)
+//         })
+//         .catch(err => {
+//             console.log('err', err)
+//             res.status(400).send('400: BAD REQUEST')
+//         })
+//     })
+// })
+
 //exports router for modular use
 module.exports = router

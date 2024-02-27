@@ -5,8 +5,27 @@ const show = ({places}) => {
     let comments = (
         <h4 className='inactive'>No comments yet. Be the first to comment!</h4>
     )
+
+    let rating = (
+        <h4 className='inactive'>Not yet rated</h4>
+    )
     
     if (places.comments.length > 0) {
+        let sumRatings = places.comments.reduce((tot, c) => {
+            return tot + c.stars
+        }, 0)
+
+        let averageRating = Math.round(sumRatings / places.comments.length)
+
+        let starRating = []
+        for (let stars = 0; stars < averageRating; stars++) {
+            starRating.push(<img className='star-img' src='/images/star.svg' alt='gold star' />)
+        }
+
+        rating = (
+            <h4>{starRating}</h4>
+        )
+
         comments = places.comments.map(c => {
             
             let starCollection = []
@@ -26,6 +45,9 @@ const show = ({places}) => {
                         <p className='rant'>{c.rant ? 'Rant! >:(' : 'Rave! :D'}</p>
                     </div>
                     <p>{c.content}</p>
+                    {/* <form method='POST' action={`/places/${places.id}/comments/${c.id}?_method=DELETE`}>
+                        <input type='submit' className='btn delete-comment-btn' value='Delete Comment' />
+                    </form> */}
                 </div>
             )
         })
@@ -49,7 +71,7 @@ const show = ({places}) => {
                         <div className='show-desc-container'>
                             <p>{cuisinesBadges}</p>
                             <h2>Rating</h2>
-                            <p>Not Rated</p>
+                            {rating}
                             <h2>Description</h2>
                             <p>{places.showEstablished()}</p>
                             <div id='show-buttons-container'>
@@ -63,7 +85,6 @@ const show = ({places}) => {
                 </div>
                 <h2 className='comments-header'>Comments</h2>
                 {comments}
-                {/* <h2 className='comments-header'>Add a Comment</h2> */}
                 <div id='comment-form-container' className='d-none'>
                     <form action={`/places/${places.id}/comments`} method='POST'>
                         <div className='form-group stars'>
